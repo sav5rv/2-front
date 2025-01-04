@@ -1,0 +1,14 @@
+front-end/
+├── index.html               # Página inicial (Ex: Formulário de login)
+├── register.html            # Página de registro de usuários
+├── reset-password.html      # Página de redefinição de senha
+├── list-access.html         # Página para listar acessos
+├── js/
+│   ├── main.js              # Lógica geral do front-end
+│   ├── validation.js        # Validações de formulários
+│   └── api.js               # Comunicação com os endpoints da API
+├── css/
+│   ├── style.css            # Estilos principais
+│   └── form.css             # Estilos específicos para formulários
+└── assets/
+    └── logo.png             # Logotipo ou outros recursos
