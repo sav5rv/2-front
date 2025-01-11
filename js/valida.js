@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+/* document.getElementById('loginForm').addEventListener('submit', function (e) {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
   
@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
       alert('Por favor, insira um e-mail válido.');
     }
-  });
+  }); */
 
 // Validações básicas
 export function validarEmail(email) {

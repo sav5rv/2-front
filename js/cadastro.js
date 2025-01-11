@@ -1,5 +1,5 @@
-import { cadastrarUsuario } from './api.js';
-import { validarEmail, validarSenha } from './validacoes.js';
+import { cadastrarUsuario } from './api.js'; // Use caminhos relativos com "./" ou "../"
+import { validarEmail, validarSenha } from './valida.js';
 
 document.getElementById('form-cadastro').addEventListener('submit', async (event) => {
   event.preventDefault();

@@ -1,14 +1,15 @@
-const API_BASE_URL = 'http://localhost:3000';
+const API_URL = 'http://localhost:3000';
+console.log(`${API_URL}/usuarios/cadastrar`);
 
-async function login(email, password) {
+async function login(email, senha) {
   try {
     const response = await fetch(`${API_BASE_URL}/usuarios/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, senha }),
     });
     const data = await response.json();
-
+    
     if (response.ok) {
       alert('Login realizado com sucesso!');
       localStorage.setItem('token', data.token);
@@ -23,22 +24,24 @@ async function login(email, password) {
 }
 
 // Usando a função na página de login
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+/* document.getElementById('form-login').addEventListener('submit', function (e) {
   e.preventDefault();
   const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-  login(email, password);
-});
+  const senha = document.getElementById('senha').value.trim();
+  login(email, senha);
+}); */
 
 
 export async function cadastrarUsuario(nome, email, senha) {
-  const response = await fetch(`${API_URL}/usuarios`, {
+
+  const response = await fetch(`${API_URL}/usuarios/cadastrar`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nome, email, senha }),
   });
+  
   return response.json();
-}
+};
 
 export async function loginUsuario(email, senha) {
     const response = await fetch(`${API_URL}/usuarios/login`, {
