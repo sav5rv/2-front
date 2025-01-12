@@ -1,9 +1,8 @@
 const API_URL = 'http://localhost:3000';
-console.log(`${API_URL}/usuarios/cadastrar`);
 
-async function login(email, senha) {
+export async function login(email, senha) {
   try {
-    const response = await fetch(`${API_BASE_URL}/usuarios/login`, {
+    const response = await fetch(`${API_URL}/usuarios/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, senha }),
@@ -13,7 +12,7 @@ async function login(email, senha) {
     if (response.ok) {
       alert('Login realizado com sucesso!');
       localStorage.setItem('token', data.token);
-      window.location.href = 'list-access.html';
+      window.location.href = 'boasVindas.html';
     } else {
       alert(data.erro || 'Erro ao realizar login');
     }
@@ -21,7 +20,7 @@ async function login(email, senha) {
     console.error('Erro:', error);
     alert('Erro ao conectar com o servidor.');
   }
-}
+};
 
 // Usando a função na página de login
 /* document.getElementById('form-login').addEventListener('submit', function (e) {
@@ -43,21 +42,21 @@ export async function cadastrarUsuario(nome, email, senha) {
   return response.json();
 };
 
-export async function loginUsuario(email, senha) {
+/* export async function loginUsuario(email, senha) {
     const response = await fetch(`${API_URL}/usuarios/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, senha }),
     });
     return response.json();
-  }
+  } */
   
-  export async function enviarEmailRecuperacao(email) {
-    const response = await fetch(`${API_URL}/usuarios/recuperar-senha`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
-    });
-    return response.json();
-  }
+export async function enviarEmailRecuperacao(email) {
+  const response = await fetch(`${API_URL}/usuarios/recuperar-senha`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email }),
+  });
+  return response.json();
+};
   
