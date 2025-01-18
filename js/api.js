@@ -52,11 +52,35 @@ export async function cadastrarUsuario(nome, email, senha) {
   } */
   
 export async function enviarEmailRecuperacao(email) {
+  try {
   const response = await fetch(`${API_URL}/usuarios/recuperar-senha`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email }),
   });
-  return response.json();
+
+  return await response.json();
+  } catch (error) {
+    console.error('Erro ao enviar e-mail de recuperação:', error);
+    return { mensagem: 'Erro ao enviar e-mail' };
+  }
 };
+
+export const verificarEmailExistente = async (email) => {
+  try {
+    const response = await fetch(`${API_URL}/usuarios/checkEmail`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await response.json();
+    return data.existe; // Supondo que o endpoint retorne { existe: true/false }
+  } catch (error) {
+    console.error('Erro ao verificar e-mail:', error);
+    return false;
+  }
+};
+
+
   
