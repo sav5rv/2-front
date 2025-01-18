@@ -1,0 +1,116 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Centralizando a página */
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Estilizando o container */
+  .container {
+    width: 90%; /* Largura adaptável */
+    max-width: 1200px; /* Limite para telas grandes */
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  /* Wrapper para a tabela */
+  .table-wrapper {
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+    margin-top: 20px;
+  }
+  
+  /* Estilização para a tabela */
+  table.display {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  table.display thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  table.display th,
+  table.display td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  table.display tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  table.display tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Botões de ações */
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button.btn-editar {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.btn-editar:hover {
+    background-color: #0056b3;
+  }
+  
+  button.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.btn-excluir:hover {
+    background-color: #a71d2a;
+  }
+  
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.2rem;
+    }
+  
+    table.display th,
+    table.display td {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 80%; /* Ajuste para telas muito grandes */
+    }
+  }
+  
